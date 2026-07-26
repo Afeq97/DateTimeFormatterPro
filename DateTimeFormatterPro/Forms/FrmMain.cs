@@ -1,7 +1,8 @@
-﻿using System;
-using System.Windows.Forms;
-using DateTimeFormatterPro.Helpers;
+﻿using DateTimeFormatterPro.Helpers;
 using DateTimeFormatterPro.Repository;
+using System;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace DateTimeFormatterPro
 {
@@ -12,6 +13,8 @@ namespace DateTimeFormatterPro
         public FrmMain()
         {
             InitializeComponent();
+
+            ApplyDarkMode();
 
             UIStyleHelper.StyleButtons(
                 btnConvert,
@@ -153,6 +156,26 @@ namespace DateTimeFormatterPro
                 "Success",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Information);
+        }
+        private void ApplyDarkMode()
+        {
+            this.BackColor = Color.FromArgb(30, 30, 30);
+
+            grpConverter.ForeColor = Color.White;
+            grpConverter.BackColor = Color.FromArgb(45, 45, 45);
+
+            lblDateTime.ForeColor = Color.White;
+            lblFormat.ForeColor = Color.White;
+            lblPreview.ForeColor = Color.White;
+            lblHistory.ForeColor = Color.White;
+
+            txtFormat.BackColor = Color.FromArgb(60, 60, 60);
+            txtFormat.ForeColor = Color.White;
+
+            txtPreview.BackColor = Color.FromArgb(60, 60, 60);
+            txtPreview.ForeColor = Color.White;
+
+            dgvHistory.BackgroundColor = Color.FromArgb(45, 45, 45);
         }
     }
 }
